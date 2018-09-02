@@ -1,7 +1,8 @@
+# check_prime implements a algorithmically naive, but easily readable, test for primes
 from math import sqrt
 
 
-# Function isPrime implements a algorithmically naive, but easily readable, test for primes
+# Function is_prime returns True if a given number is prime
 def is_prime(n):
     # Edge cases
     if n <= 1:
