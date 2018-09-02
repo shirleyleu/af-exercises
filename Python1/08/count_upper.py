@@ -1,8 +1,7 @@
-# Function count_upper returns the number of capital ASCII letters in text.txt
-def count_upper():
+# Function count_upper takes a file-like object and returns the number of
+# capital ASCII letters it contains
+def count_upper(file):
     count = 0
-    # File text.txt must be in the same directory
-    file = open('text.txt', 'r')
     for l in file.read():
         if l.isupper():
             count += 1
@@ -11,4 +10,5 @@ def count_upper():
 
 
 if __name__ == '__main__':
-    print(count_upper())
+    file = open("text.txt", 'r')
+    print(count_upper(file))

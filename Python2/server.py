@@ -1,4 +1,4 @@
-# Runs a server at http://localhost:8000/ and displays the temperature in Celcius in Paris
+# Runs a web server at http://localhost:8000/ that displays the temperature in Celcius in Paris
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
@@ -20,7 +20,7 @@ def get_paris_weather_info():
 class TemperatureHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         json_response = get_paris_weather_info()
-        if json_response == None:
+        if json_response is None:
             self.send(500, "Something is wrong with the openweathermap API")
             return
         temp_celcius = round(json_response["main"]["temp"] - 273.15, 2)
